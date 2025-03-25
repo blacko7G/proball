@@ -1,0 +1,46 @@
+body {
+    font-family: 'Rajdhani', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.selection-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.scout-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.player-btn {
+    background-color: #27ae60;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}

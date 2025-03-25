@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Profile</title>
+    <link rel="stylesheet" href="profile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="logo">
+        <img src="public/logo.png" width="140" height="140" />
+    </div>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="public/Africa.jpg" alt="Player Image" class="player-image">
+            <h1>John Doe</h1>
+            <p class="position">Striker - FC Lagos</p>
+        </div>
+
+        <div class="profile-stats">
+            <div class="stat-box"><span>30</span> Goals</div>
+            <div class="stat-box"><span>15</span> Assists</div>
+            <div class="stat-box"><span>50</span> Matches</div>
+            <div class="stat-box"><span>5</span> MVP Awards</div>
+        </div>
+
+        <div class="profile-bio">
+            <h2>About John</h2>
+            <p>John Doe is a dynamic striker known for his speed and precision. With 30 goals this season, he has proven to be a key player for FC Lagos.</p>
+        </div>
+
+        <div class="btn-container">
+            <button class="scout-btn">Scout Player</button>
+            <button class="message-btn" onclick="openMessageModal()">Message Player</button>
+        </div>
+    </div>
+
+    <!-- Message Pop-Up Modal -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeMessageModal()">&times;</span>
+            <h2>Send a Message</h2>
+            <textarea id="messageInput" placeholder="Type your message..."></textarea>
+            <button class="send-btn" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

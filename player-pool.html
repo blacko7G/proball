@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Pool</title>
+    <link rel="stylesheet" href="player-pool.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="logo">
+        <img src="public/logo.png" width="140" height="140" />
+    </div>
+
+    <header>
+        <h1>Players</h1>
+        <input type="text" id="searchBar" placeholder="Search players...">
+        <select id="filterPosition">
+            <option value="">All Positions</option>
+            <option value="Striker">Striker</option>
+            <option value="Midfielder">Midfielder</option>
+            <option value="Defender">Defender</option>
+            <option value="Goalkeeper">Goalkeeper</option>
+        </select>
+        <button id="compareBtn" disabled>Compare Players</button>
+        <button id="rankBtn">Top Players</button>
+    </header>
+
+    <div id="player-list" class="player-grid"></div>
+
+    <!-- Player Comparison Modal -->
+    <div id="comparison-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Player Comparison</h2>
+            <div id="comparison-container"></div>
+        </div>
+    </div>
+
+    <script src="player-pool.js"></script>
+</body>
+</html>

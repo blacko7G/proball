@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Scouting App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Silkscreen';
+        }
+
+        body {
+            background-color: white;
+            text-align: center;
+            padding: 20px;
+            top: 400px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 200px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 4px 4px 4px black;
+            color: black;
+            margin-left: 400px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .player-card {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 4px 4px 4px;
+        }
+
+            .player-card img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 15px;
+            }
+
+        .player-info {
+            text-align: left;
+        }
+
+        .btn {
+            background-color: white;
+            color: black;
+            padding: 8px 12px;
+            border: thin;
+            border-color: black;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .btn:hover {
+                background-color: black;
+                color: white;
+                border: thin;
+                border-color: white;
+            }
+    </style>
+</head>
+<body>
+    <h2 id="userRole"></h2>
+
+    <div class="container">
+        <h1>Football Scouting App</h1>
+
+        <div class="player-card">
+            <img src="public/kkk.jpg" alt="Player">
+            <div class="player-info">
+                <h3>John Doe</h3>
+                <p> Position: Striker</p>
+                <p>Club: FC Lagos</p>
+                <button class="btn">View Profile</button>
+            </div>
+        </div>
+
+        <div class="player-card">
+            <img src="public/ball.jpg" alt="Player">
+            <div class="player-info">
+                <h3>James Smith</h3>
+                <p> Position: Defender</p>
+                <p> Club: Abuja United</p>
+                <button class="btn">View Profile</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

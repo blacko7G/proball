@@ -1,0 +1,155 @@
+/* General styles */
+body {
+    font-family: "Rajdhani", sans-serif;
+    text-align: center;
+    background: url('public/stadium.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+/* Profile container */
+.profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(111, 216, 235, 0.70);
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Player Image */
+.player-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgb(63, 217, 238);
+}
+
+/* Profile Stats */
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.stat-box {
+    background: black;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    border: outset 2px;
+    border-color: white;
+}
+
+    .stat-box span {
+        display: block;
+        font-size: 24px;
+    }
+
+/* Bio Section */
+.profile-bio {
+    margin: 20px 0;
+}
+
+/* Buttons */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.scout-btn, .message-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Scout Button */
+.scout-btn {
+    background: black;
+    color: white;
+}
+
+    .scout-btn:hover {
+        background: white;
+        color: deepskyblue;
+    }
+
+/* Message Button */
+.message-btn {
+    background: #0080FF;
+    color: white;
+}
+
+    .message-btn:hover {
+        background: white;
+        color: #0080FF;
+    }
+
+/* Message Pop-Up Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background: white;
+    color: black;
+    padding: 20px;
+    width: 50%;
+    margin: 10% auto;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgb(63, 181, 226, 0.70);
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+textarea {
+    width: 90%;
+    height: 100px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.send-btn {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+    .send-btn:hover {
+        background: white;
+        color: black;
+        border: 2px solid black;
+    }
+.logo {
+    top: 0;
+    left: 0;
+    display: flex;
+    position: fixed;
+}
