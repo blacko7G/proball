@@ -4,32 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login & Register</title>
+    <link rel="stylesheet" href="selection.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="auth.css">
     <script defer src="auth.js"></script>
 </head>
 <body>
-      <div class="logo">
-      <img src="public/logo.png" width="140" height="140" />
-  </div>
+    <div class="logo">
+        <img src="public/logo.png" width="140" height="140" />
+    </div>
+
     <div class="auth-container">
+        <!-- Login Box -->
         <div class="form-box active" id="login-box">
             <h2>Login</h2>
             <form id="login-form">
-                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="email" id="login-email" placeholder="Email or Phone Number" required>
                 <input type="password" id="login-password" placeholder="Password" required>
+                
+
+                <!-- Error Message -->
+                <div id="login-error" class="error-msg"></div>
+
+                <!-- OTP Verification (Hidden initially) -->
+                <div class="otp-container" id="otp-box" style="display: none;">
+                    <input type="text" id="otp-input" placeholder="Enter OTP" required>
+                    <button type="button" onclick="verifyOTP()">Verify</button>
+                </div>
+
                 <button type="submit">Login</button>
-                <p>Don't have an account? <span class="toggle-form" onclick="toggleForm()">Register</span></p>
+                <p><a href="#" onclick="forgotPassword()">Forgot Password?</a></p>
+
+                <p>Don't have an account? <span class="toggle-form" onclick="toggleForm()"><b> Register </b></span></p>
+
+                <!-- Social Login -->
+                <div class="social-login">
+                    <button class="ref" class="ref" onclick="socialLogin('Google')">Login with Google</button>
+                    <button class="ref" onclick="socialLogin('Facebook')">Login with Facebook</button>
+                    <button class="ref" onclick="socialLogin('Apple')">Login with Apple</button>
+                    <button class="ref" onclick="socialLogin('Twitter')">Login with Twitter</button>
+                </div>
             </form>
         </div>
 
+        <!-- Register Box -->
         <div class="form-box" id="register-box">
             <h2>Register</h2>
             <form id="register-form">
                 <input type="text" id="register-name" placeholder="Full Name" required>
                 <input type="email" id="register-email" placeholder="Email" required>
                 <input type="password" id="register-password" placeholder="Password" required>
-                <button type="submit">Register</button>
-                <p>Already have an account? <span class="toggle-form" onclick="toggleForm()">Login</span></p>
+                
+                <!-- Profile Picture Upload -->
+                <label for="profile-pic">Upload Profile Picture:</label>
+                <input type="file" id="profile-pic" accept="image/*">
+
+                <!-- OTP Request for 2FA -->
+                <button class="rec" type="button" onclick="sendOTP()">Send OTP</button>
+
+                <button class="re" type="submit">Register</button>
+                <p>Already have an account? <span class="toggle-form" onclick="toggleForm()"><b>Login</b></span></p>
             </form>
         </div>
     </div>

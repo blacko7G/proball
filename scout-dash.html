@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scout Dashboard</title>
+   
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="scout-dash.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <img src="public/logo.png" width="140" height="140" alt="Logo">
+        <ul>
+            <li><a href="#" class="nav-link active" data-section="dashboard">📊 Dashboard</a></li>
+            <li><a href="#" class="nav-link" data-section="discovery">🔍 Player Discovery</a></li>
+            <li><a href="#" class="nav-link" data-section="shortlist">📌 Shortlist</a></li>
+            <li><a href="#" class="nav-link" data-section="reports">📝 Scouting Reports</a></li>
+            <li><a href="#" class="nav-link" data-section="trials">⚽ Trials & Recruitment</a></li>
+            <li><a href="#" class="nav-link" data-section="messages">💬 Messages</a></li>
+            <li><a href="#" class="nav-link" data-section="settings">⚙️ Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Scout Dashboard</h1>
+        </header>
+
+        <!-- Dashboard Overview -->
+        <section id="dashboard" class="content-section active">
+            <h2>Dashboard Overview</h2>
+            <div class="dashboard-stats">
+                <div class="stat-box">
+                    <h3>Total Players Scouted</h3>
+                    <p>120</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Top Rated Players</h3>
+                    <p>⭐ 5 Players</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Pending Reports</h3>
+                    <p>15</p>
+                </div>
+            </div>
+        </section>
+
+      <!-- Player Discovery Section -->
+      <section id="player-discovery" class="content-section">
+    <h2>🔍 Player Discovery</h2>
+
+    <!-- Filters -->
+    <div class="filters">
+        <select id="positionFilter">
+            <option value="">All Positions</option>
+            <option value="Forward">Forward</option>
+            <option value="Midfielder">Midfielder</option>
+            <option value="Defender">Defender</option>
+            <option value="Goalkeeper">Goalkeeper</option>
+        </select>
+
+        <select id="ageFilter">
+            <option value="">All Ages</option>
+            <option value="U18">Under 18</option>
+            <option value="U23">Under 23</option>
+            <option value="Senior">Senior</option>
+        </select>
+
+        <button onclick="filterPlayers()">Apply Filters</button>
+    </div>
+
+    <!-- Player List -->
+    <div class="player-list">
+        <div class="player-card" data-position="Forward" data-age="U23">
+            <img src="public/player1.jpg" alt="Player">
+            <h3>John Doe</h3>
+            <p>⚽ Position: Forward</p>
+            <p>🎂 Age: 22</p>
+            <button onclick="addToWatchlist('John Doe')">👀 Add to Watchlist</button>
+            <button onclick="openScoutingForm('John Doe')">📋 Add Scouting Report</button>
+        </div>
+
+        <div class="player-card" data-position="Midfielder" data-age="U18">
+            <img src="public/player2.jpg" alt="Player">
+            <h3>Jane Smith</h3>
+            <p>⚽ Position: Midfielder</p>
+            <p>🎂 Age: 17</p>
+            <button onclick="addToWatchlist('Jane Smith')">👀 Add to Watchlist</button>
+            <button onclick="openScoutingForm('Jane Smith')">📋 Add Scouting Report</button>
+        </div>
+
+      
+</section>
+
+<!-- Scouting Report Form (Hidden by Default) -->
+<div id="scouting-form" class="scouting-modal">
+    <h3>Scouting Report for <span id="scouted-player"></span></h3>
+    <textarea id="report-text" placeholder="Write your scouting notes..."></textarea>
+    <button onclick="saveReport()">Save Report</button>
+    <button onclick="closeScoutingForm()">Cancel</button>
+</div>
+
+
+    <script src="scout-dash.js"></script>
+</body>
+</html>

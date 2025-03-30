@@ -5,52 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Profile</title>
     <link rel="stylesheet" href="profile.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="profile.js"></script>
 </head>
 <body>
-
-    <div class="logo">
-        <img src="public/logo.png" width="140" height="140" />
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <img src="public/logo.png" width="140" height="140" alt="Logo">
+        <ul>
+            <li><a href="dashboard.html">🏠 Dashboard</a></li>
+            <li><a href="#" class="active">⚽ Profile</a></li>
+            <li><a href="messages.html">💬 Messages</a></li>
+            <li><a href="settings.html">⚙️ Settings</a></li>
+        </ul>
     </div>
 
-    <div class="profile-container">
-        <div class="profile-header">
-            <img src="public/Africa.jpg" alt="Player Image" class="player-image">
-            <h1>John Doe</h1>
-            <p class="position">Striker - FC Lagos</p>
+    <!-- Main Profile Section -->
+    <div class="main-content">
+        <header>
+            <h1>Player Profile</h1>
+        </header>
+
+        <div class="profile-container">
+            <!-- Player Info -->
+            <div class="profile-card">
+                <img src="public/player.jpg" alt="Player Picture" class="profile-pic">
+                <h2 id="player-name">John Doe</h2>
+                <p>⚽ Position: Forward</p>
+                <p>🏟 Club: Elite FC</p>
+                <p>🌍 Nationality: Nigeria</p>
+                <p>🎂 Age: 22</p>
+                <button class="message-btn">💬 Message</button>
+            </div>
+
+            <!-- Player Stats -->
+            <div class="stats-card">
+                <h3>📊 Player Stats</h3>
+                <ul class="stats-list">
+                    <li>⚽ Goals: <span>15</span></li>
+                    <li>🎯 Assists: <span>10</span></li>
+                    <li>📅 Appearances: <span>22</span></li>
+                    <li>⭐ Avg Rating: <span>8.4</span></li>
+                </ul>
+            </div>
         </div>
 
-        <div class="profile-stats">
-            <div class="stat-box"><span>30</span> Goals</div>
-            <div class="stat-box"><span>15</span> Assists</div>
-            <div class="stat-box"><span>50</span> Matches</div>
-            <div class="stat-box"><span>5</span> MVP Awards</div>
-        </div>
-
-        <div class="profile-bio">
-            <h2>About John</h2>
-            <p>John Doe is a dynamic striker known for his speed and precision. With 30 goals this season, he has proven to be a key player for FC Lagos.</p>
-        </div>
-
-        <div class="btn-container">
-            <button class="scout-btn">Scout Player</button>
-            <button class="message-btn" onclick="openMessageModal()">Message Player</button>
-        </div>
+        <!-- Highlight Videos -->
+        <section class="highlight-section">
+            <h3>🎥 Highlight Videos</h3>
+            <div class="video-gallery">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" allowfullscreen></iframe>
+            </div>
+        </section>
     </div>
-
-    <!-- Message Pop-Up Modal -->
-    <div id="messageModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeMessageModal()">&times;</span>
-            <h2>Send a Message</h2>
-            <textarea id="messageInput" placeholder="Type your message..."></textarea>
-            <button class="send-btn" onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-
-    <script src="profile.js"></script>
 </body>
 </html>

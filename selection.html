@@ -5,15 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Role Selection</title>
     <link rel="stylesheet" href="selection.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Select Your Role</h1>
-        <div class="selection-buttons">
-            <button id="scout" class="scout-btn">Scout</button>
-            <button id="player" class="player-btn">Player</button>
+    <div class="logo">
+        <img src="public/logo.png" width="140" height="140" />
+    </div>
+    <div class="overlay">
+        <div class="role-modal">
+            <h2>Select Your Role</h2>
+            <p>Choose your role to continue</p>
+            <div class="role-options">
+                <button id="role-player" class="role-btn">
+                    <a href="player-dash.html">
+                        <img src="public/icon.png" alt="Player">
+                    </a></a>
+                    Player
+                </button>
+                <button id="scout" class="role-btn">
+                    <img src="public/scout-icon.png" alt="Scout">
+                    Scout/Agent
+                </button>
+                <button id="academy" class="role-btn">
+                    <img src="public/admin.png" alt="Academy">
+                    Academy Admin
+                </button>
+            </div>
         </div>
     </div>
     <script src="selection.js"></script>
 </body>
 </html>
+

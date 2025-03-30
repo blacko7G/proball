@@ -1,69 +1,189 @@
-* {
+body {
+    font-family: "Rajdhani", sans-serif;
+    background: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: url('public/stadium.jpg') no-repeat center center/cover;
-}
-    .auth-container {
-    width: 350px;
+.auth-container {
+    width: 400px;
     background: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
-}
-
-.form-box {
-    display: none;
-}
-
-    .form-box.active {
-        display: block;
-    }
-
-h2 {
-    margin-bottom: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    position: relative;
 }
 
 input {
-    width: 100%;
+    width: calc(100% - 22px);
     padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
+    margin: 5px 0;
+    border: 1px solid #ddd;
     border-radius: 5px;
+    display: block;
 }
 
 button {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     background: black;
     color: white;
     border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: "Rajdhani", sans-serif;
+}
+
+button:hover {
+    background: #ffcc00;
+}
+
+.ref{
+    background-color: white ;
+    color:#000;
+}
+.ref:hover{
+    background-color: #f4f4f4;
+}
+
+
+
+.error-message, .success-message {
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.error-message {
+    color: red;
+    background: #ffcccc;
+}
+
+.success-message {
+    color: green;
+    background: #ccffcc;
+}
+
+/* Password Field with Toggle */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.toggle-password {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Password Strength Indicator */
+.password-strength {
+    font-size: 12px;
+    text-align: left;
+    margin-top: 5px;
+    color: gray;
+}
+
+.weak {
+    color: red;
+}
+
+.medium {
+    color: orange;
+}
+
+.strong {
+    color: green;
+}
+
+/* OTP Input */
+.otp-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.otp-container input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Modal for Email Verification & Forgot Password */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+/* Social Login Buttons */
+.social-login {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.social-btn {
+    padding: 10px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
+    color: white;
+    font-size: 14px;
+    width: 48%;
+    font-weight: bold;
 }
 
-    button:hover {
-        background: white;
-        color: black;
-    }
+.google { background: #DB4437; }
+.facebook { background: #4267B2; }
+.apple { background: #000; }
+.twitter { background: #1DA1F2; }
 
-.toggle-form {
-    color: #2a5298;
-    cursor: pointer;
+.google:hover { background: #c1351d; }
+.facebook:hover { background: #365899; }
+.apple:hover { background: #333; }
+.twitter:hover { background: #0d95e8; }
+
+/* Animated Form Switching */
+.form-box {
+    transition: transform 0.4s ease-in-out;
 }
-.logo {
-    top: 0;
-    left: 0;
-    display: flex;
-    position: fixed;
+
+.form-box.active {
+    transform: translateY(0);
 }
+
+.form-box:not(.active) {
+    transform: translateY(-200%);
+    display: none;
+}
+.rec{
+    background-color: white ;
+    color:#000;
+}
+.rec:hover{
+    background-color: #f4f4f4;
+}           

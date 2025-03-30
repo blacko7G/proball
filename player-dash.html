@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Dashboard</title>
+    <link rel="stylesheet" href="player-dash.css">
+    <link rel="stylesheet" href="selection.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="player-dash.js"></script>
+    <script src="performance-analytics.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <img src="public/logo.png" width="140" height="140" alt="Logo">
+        <ul>
+            <li><a href="#" class="nav-link active" data-section="profile">🏅 Profile</a></li>
+            <li><a href="#" class="nav-link" data-section="highlights">🎥 Highlights</a></li>
+            <li><a href="#" class="nav-link" data-section="activity">📜 Activity Feed</a></li>
+            <li><a href="#" class="nav-link" data-section="Trials">📜 Trials Feed</a></li>
+            <li><a href="#" class="nav-link" data-section="performance-analytics">📜 Analysis </a></li>
+            <li><a href="#" class="nav-link" data-section="watchlist">👀 Watchlist</a></li>
+            <li><a href="#" class="nav-link" data-section="notifications">🔔 Notifications</a></li>
+            <li><a href="#" class="nav-link" data-section="settings">⚙️ Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <header>
+            <h1>Player Dashboard</h1>
+        </header>
+
+
+            <section id="profile" class="content-section active">
+                <div class="profile-overview">
+                    <div class="profile-card">
+                        <img src="public/ney.jpg" alt="Profile Picture" class="profile-pic">
+                        <h2 id="player-name">John Doe</h2>
+                        <p>⚽ Position: Forward</p>
+                        <p>🎂 Age: 22</p>
+                        <p>🌍 Country: Nigeria</p>
+                        <button class="edit-btn">Edit Profile</button>
+                    </div>
+            
+                    <div class="bio-section">
+                        <h3>About Me</h3>
+                        <p id="bio-text">A young and talented forward looking to make an impact in professional football.</p>
+                    </div>
+            
+                    <div class="stats-container">
+                        <div class="stats-box">
+                            <h3>⚽ Goals</h3>
+                            <p id="goals">10</p>
+                        </div>
+                        <div class="stats-box">
+                            <h3>🎯 Assists</h3>
+                            <p id="assists">5</p>
+                        </div>
+                        <div class="stats-box">
+                            <h3>📊 Pass Accuracy</h3>
+                            <p id="accuracy">85%</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <section id="profile" class="content-section active">
+                <div class="profile-overview">
+                    <div class="recent-posts">
+                        <h3>Recent Posts</h3>
+                        <div class="post">
+                            <img src="public/post1.jpg" alt="Highlight">
+                            <p>🔥 Amazing goal in last match! #ScoredAgain</p>
+                        </div>
+                    </div>                                      
+            </section>
+
+
+            <!-- Highlights Section -->
+            <section id="highlights" class="content-section">
+                <h2>My Highlights</h2>
+                <input type="file" id="videoUpload" accept="video/*">
+                <button onclick="uploadVideo()">Upload Video</button>
+                <div id="uploadedVideos"></div>
+            </section>
+
+            <!-- Activity Feed Section -->
+            <section id="activity" class="content-section">
+                <h2>Activity Feed</h2>
+                <ul class="activity-list">
+                    <li>
+                        <p><strong>Teammate:</strong> Just posted a new highlight!</p>
+                        <button class="like-btn">👍 Like</button>
+                        <button class="comment-btn">💬 Comment</button>
+                        <button class="watchlist-btn">👀 Add to Watchlist</button>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="Trials" class="content-section">
+                <h2>Trials Feed</h2>
+                <ul class="trials-list">
+                    <li>
+                        <p><strong>Elite FC:</strong> Open trials on 15th March!</p>
+                        <button class="apply-btn">📝 Apply</button>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="performance-analytics" class="content-section">
+                <h2>Performance Analytics</h2>
+            
+                <div class="analytics-card">
+                    <h3>Match Performance</h3>
+                    <p>Goals: 10</p>
+                    <p>Assists: 5</p>
+                    <p>Pass Accuracy: 85%</p>
+                </div>
+            
+                <div class="analytics-card">
+                    <h3>Fitness Level</h3>
+                    <p>Stamina: 90%</p>
+                    <p>Speed: 80%</p>
+                    <p>Strength: 75%</p>
+                </div>
+            
+                <!-- Performance Chart -->
+                <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+
+                <!-- Performance Radar Chart -->
+<div class="chart-container" margin-top="300px" width="600px" height="600px" max-width="80%" max-height="80%">
+    <canvas id="performanceRadarChart"></canvas>
+</div>
+
+            </section>
+            
+            
+
+            <!-- Watchlist Section -->
+            <section id="watchlist" class="content-section">
+                <h2>My Watchlist</h2>
+                <ul id="watchlist-list"></ul>
+            </section>
+
+            <!-- Notifications -->
+            <section id="notifications" class="content-section">
+                <h2>Notifications</h2>
+                <ul id="notifications-list">
+                    <li>🔥 New trial opportunity at Elite FC!</li>
+                </ul>
+            </section>
+
+            <!-- Settings -->
+            <section id="settings" class="content-section">
+                <h2>Settings</h2>
+                <p>Feature coming soon...</p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
